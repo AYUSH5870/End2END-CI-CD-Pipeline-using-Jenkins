@@ -1,4 +1,4 @@
-# CI/CD Pipeline for User Registration App with Jenkins, Maven, and Tomcat
+# CI/CD Pipeline for User Registration App with Jenkins
 
 This approach is to set up an end-to-end CI/CD pipeline for a User Registration App using **Jenkins**, **Maven**, and **Tomcat Server**.
 
