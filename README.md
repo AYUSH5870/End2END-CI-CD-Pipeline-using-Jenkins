@@ -29,6 +29,9 @@ This approach is to set up an end-to-end CI/CD pipeline for a User Registration 
      <user username="admin" password="admin" roles="manager-gui,manager-script"/>
      ```
    - Restart the Tomcat server.
+   
+     ![apache setup](https://github.com/user-attachments/assets/6fb0af0c-7ad2-483f-a096-4433cc89ee3a)
+
 
 2. **Verify Manager Access**:
    - Open `http://<yours_tomcat_server>:8080/manager` in your browser and log in with the credentials.
@@ -59,6 +62,7 @@ This approach is to set up an end-to-end CI/CD pipeline for a User Registration 
 2. **Configure the Pipeline**:
    - Define the pipeline script (details below).
    - Install Required Jenkins Plugins
+     
 **To set up the necessary plugins, go to Manage Jenkins > Manage Plugins and install:**
    - Maven Integration Plugin
    - Docker Pipeline Plugin
@@ -69,6 +73,9 @@ This approach is to set up an end-to-end CI/CD pipeline for a User Registration 
    -  Add your Maven and Docker configurations:
    - Specify Maven installation.
 Set up the Docker daemon connection.
+
+![maven build](https://github.com/user-attachments/assets/e6f22e1d-3b53-4e36-affc-a4233347cae1)
+
 ## Step 4: Git Repository Structure
    - Create your Git repository with the following components:
 
@@ -78,6 +85,9 @@ Set up the Docker daemon connection.
     **kubernetes/deployment.yaml:** Kubernetes configuration for deploying the application.
 ## Step 5: Create Dockerfile
    - Create a Dockerfile that will package your application into a Docker image:
+
+     ![ec2](https://github.com/user-attachments/assets/0a91528d-a668-403e-bee7-5b758d08d4ac)
+
 ## Step 6: Kubernetes Deployment Configuration
    - In the kubernetes/deployment.yaml file, define the Kubernetes deployment and service:
 ## Step 7: Setting Up Docker and Kubernetes on Jenkins
@@ -99,12 +109,17 @@ Set up Kubernetes credentials in Jenkins to allow deployment.
 ## Step 8: Run the Pipeline
 Once your Jenkinsfile, Dockerfile, and Kubernetes configurations are in place, you can trigger the pipeline manually or automatically using webhooks (e.g., from GitHub).
 
+![jenkins build](https://github.com/user-attachments/assets/321b70ff-408b-4397-97b8-42599f2649ed)
+
+
 **The Pipeline Will:**
 Clone: Pull the source code from the Git repository.
 Build: Use Maven to build the WAR file.
 Docker Build: Build a Docker image and push it to Docker Hub.
 Kubernetes Deployment: Deploy the application to the Kubernetes cluster.
 ## Access the Application
+
+![register app deployment](https://github.com/user-attachments/assets/c7b60a28-43ac-4cc3-9685-d8940f29b553)
 
 
 
